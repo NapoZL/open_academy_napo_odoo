@@ -1,0 +1,17 @@
+<odoo>
+        <record model="open_academy.clases" id="clases">
+            <field name="name">Clase introductoria</field>
+            <field name="description">Intro a odoo</field>
+        </record>
+
+        <record model="open_academy.clases" id="clases2">
+            <field name="name">Clase intermedia</field>
+            <field name="description">Parte 2 Odoo</field>
+        </record>
+
+        <record model="open_academy.clases" id="clases3">
+            <field name="name">Clases avanzadas</field>
+            <field name="description">Finalización de especialización</field>
+        </record>
+
+</odoo>
