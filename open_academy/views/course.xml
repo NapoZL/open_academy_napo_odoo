@@ -1,5 +1,61 @@
 <odoo>
   <data>
+    <record model="ir.ui.view" id="open_academy.course_tree">
+      <field name="name">Course list</field>
+      <field name="model">open_academy.course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="responsible_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- open_academy.course form view -->
+    <record id="open_academy.course_view_form" model="ir.ui.view">
+        <field name="name">open_academy.course.view.form</field>
+        <field name="model">open_academy.course</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="responsible_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description" placeholder="Una breve descripción mi persona..."/>
+                        </page>
+
+                            <page string="Sessions">
+                                <field name="session_ids">
+                                    <tree string="Registro de sessions">
+                                        <field name="name"/>
+                                        <field name="instructor_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- open_academy.course search view -->
+        <record id="open_academy.course_view_search" model="ir.ui.view">
+                <field name="name">open_academy.course.view.search</field>
+                <field name="model">open_academy.course</field>
+                <field name="arch" type="xml">
+                        <search string="Course Description">
+                            <field name="name"/>
+                            <field name="description"/>
+                        </search>
+                </field>
+        </record>
+
     <record model="ir.actions.act_window" id="action_list_course">
         <field name="name">Courses</field>
         <field name="res_model">open_academy.course</field>
@@ -9,5 +65,7 @@
     <menuitem id="menu_open_academy" name="OpenAcademy" sequence="10"/>
     <menuitem id="menu_course" parent="menu_open_academy" name="Courses" sequence="10"
           action="action_list_course"/>
+    <menuitem id="menu_session" parent="menu_open_academy" name="Sessions" sequence="10"
+          action="action_list_session"/>
   </data>
 </odoo>
