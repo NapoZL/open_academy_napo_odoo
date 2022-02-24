@@ -10,6 +10,8 @@
           <field name="duration"/>
           <field name="seats"/>
           <field name="course_id" />
+          <field name="taken_seats" widget="progressbar"/>
+
         </tree>
       </field>
     </record>
@@ -25,11 +27,14 @@
                                 <field name="name"/>
                                 <field name="startDate"/>
                                 <field name="instructor_id"/>
+                                <field name="active"/>
+
                             </group>
                             <group string="Schedule">
                                 <field name="startDate"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
+                                <field name="taken_seats" widget="progressbar"/>
                             </group>
                         </group>
                         <label for="attendee_ids"/>
